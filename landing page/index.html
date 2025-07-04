@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Daily Motivation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to right, #ffe4e1, #ffb6c1);
+      font-family: 'Segoe UI', sans-serif;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    h1 {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+    .quote-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      max-width: 600px;
+    }
+    .quote {
+      font-size: 22px;
+      font-style: italic;
+    }
+    .author {
+      margin-top: 15px;
+      font-size: 16px;
+      color: #777;
+    }
+    button {
+      margin-top: 30px;
+      padding: 10px 25px;
+      background: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    footer {
+      position: absolute;
+      bottom: 10px;
+      font-size: 13px;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Quote of the Day</h1>
+
+  <div class="quote-box">
+    <div class="quote" id="quote">"Believe in yourself and all that you are."</div>
+    <div class="author" id="author">– Christian D. Larson</div>
+    <button onclick="nextQuote()">Next Quote</button>
+  </div>
+
+  <footer>
+    Made with ❤️ by Aditi
+  </footer>
+
+  <script>
+    const quotes = [
+      { quote: "Believe in yourself and all that you are.", author: "Christian D. Larson" },
+      { quote: "Start where you are. Use what you have. Do what you can.", author: "Arthur Ashe" },
+      { quote: "Dream big and dare to fail.", author: "Norman Vaughan" },
+      { quote: "Don’t watch the clock; do what it does. Keep going.", author: "Sam Levenson" },
+      { quote: "Doubt kills more dreams than failure ever will.", author: "Suzy Kassem" }
+    ];
+
+    function nextQuote() {
+      const i = Math.floor(Math.random() * quotes.length);
+      document.getElementById("quote").textContent = `"${quotes[i].quote}"`;
+      document.getElementById("author").textContent = `– ${quotes[i].author}`;
+    }
+  </script>
+
+</body>
+</html>
+
